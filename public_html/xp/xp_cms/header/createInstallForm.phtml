@@ -1,0 +1,66 @@
+<?php
+
+class createInstallForm
+{
+
+    /**
+     * @TODO: create form
+     * @return string
+     */
+    public static function form($base_url)
+    {
+
+        $databaseForm = '
+<div class="installForm">
+	<p>Installing XP_CMS is very easy!</p>
+	<form action="'.$base_url.'installer/?step=database" method="post" id="install">
+            <div class="formlist">
+                    <label for="hostname">hostname*</label>
+                    <input type="text" name="hostname" value="localhost" class="text required" />
+            </div>
+            <div class="formlist">
+                    <label for="username">username*</label>
+                    <input type="text" name="username" value="root" class="text required" />
+            </div>
+            <div class="formlist">
+                    <label for="password">password</label>
+                    <input type="password" name="password" value="" class="password"/>
+            </div>
+            <div class="formlist">
+                    <label for="database">database</label>
+                    <input type="text" name="database" value="xp_cms" class="text" />
+            </div>
+            <div class="formlist">
+                    <label for="submit">&nbsp;</label>
+                    <input type="submit" name="submit" value="next step >>" class="submit">
+            </div>
+    </form>
+</div>
+<script>
+jQuery(function($){
+    $("input.required").blur(function(){
+        if($(this).val() == "") {
+                $(this).addClass("highlight");
+        } else {
+                $(this).removeClass("highlight");
+        }
+    });
+    $("form#install").submit(function(){
+        if($("input.required").val() == "") {
+            $(".required").addClass("highlight");
+            return false;
+        }else {
+            $(".required").removeClass("highlight");
+        }
+    });
+});
+</script>
+';
+
+        return $databaseForm;
+    }
+
+   
+}
+
+?>

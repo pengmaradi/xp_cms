@@ -1,0 +1,149 @@
+body { font-family: Arial, sans-serif;color: #222;font-size:0.8em;}
+
+a {text-decoration:none;color:#666;}
+a:hover, a.candidate {text-decoration:underline;color:#222;}
+
+/* correct a little IE bug */
+* html li li{
+    display:inline;
+    }
+
+#header { 
+	padding:4px; 
+	border-bottom:1px solid #ddd;
+	position:relative;
+	height:1%;
+	top:0;
+	left:0;
+	}
+
+h3 {font-size:2em;font-weight:100;color:#f93;margin:0 0 0 8px;}
+h3 span {font-weight:900;font-family: Verdana, sans-serif;color:#222;margin:0 8px 0 0;}
+h2,h3,h4,h5,h6 {margin:0;}
+
+fieldset {margin:4px 0;}
+
+.clear { overflow:hidden;}
+* html .clear { height:1%;}
+
+.clearleft {clear:left;}
+.clearright {clear:right;}
+
+#container {width:960px;}
+
+#box {padding:22px 0 0 0;}
+
+#content {
+	width:680px;
+	float:right;
+/*	margin:0 0 0 32px;*/
+}
+
+
+/* forms */
+label {padding-right:8px;}
+input.inputanz { text-align:right;}
+
+.error {color:red;font-weight:bold;}
+.message {color:green;font-weight:bold;}
+
+#metanavis { 
+	list-style:none;
+	margin:6px 0 8px 0;
+    padding:0 0 8px 0;
+	border-bottom: 1px solid #ddd;
+}
+
+#metanavis li{ 
+	display:inline;
+	color:#666;
+}
+#metanavis a { margin:0 24px 0 0;}
+
+#navigation {
+	width:240px;
+	float:left;
+	margin:0 0 24px 0;
+}
+
+#navigation ul {
+	list-style:none;
+	margin:8px 0 0 0;
+    padding:0;
+}
+
+#navigation li{
+ 	margin:0 0 8px 0;
+/*	line-height:42px;*/
+	color:#666;
+	background-color:#eee;
+	border:1px solid #eee;
+}
+
+#navigation li:hover {
+	cursor:move;
+/*	border:1px solid #f93;*/
+}
+
+#navigation li li{
+	background-color:#ddd;
+	border:1px solid #ddd;
+}
+
+#navigation li li li{
+	background-color:#ccc;
+	border:1px solid #ccc;
+}
+
+#navigation a {
+	font-weight: bolder;
+	padding:12px 0 4px 4px;
+	vertical-align:middle;
+}
+
+#navigation li li a, #navigation li li span { padding-left: 4px;}
+  
+#navigation span {
+	display:block;
+	color: #222;
+	padding: 6px 0 8px 8px;
+	font-weight:400;
+}
+
+#navigation li ul, #navigation li ul { margin-left:8px;}
+#navigation li ul ul, #navigation li ul ul{ margin-left:16px;}
+
+/* for a mozilla better display with key nav */
+#navigation a:focus {
+    background-color: #ddd;
+}
+
+#navigation input { 
+	float:right;
+	margin:0;
+	padding:0;
+	width:24px;
+}
+
+#navigation p { margin-top:24px;}
+
+#articlelist {
+	list-style:none;
+	margin:8px 0 0 0;
+    padding:0;
+	width:360px;
+}
+#articlelist li { 
+	padding:0 4px;
+	margin-bottom:8px;
+	border: 1px solid #ddd;
+	line-height:1.8em;
+	}
+#articlelist li:hover {
+	background-color:#ddd;
+	cursor:move;
+}
+#articlelist span {float:right;width:80px;text-align:right;}
+/*#articlelist a { display:block;width:80px;}*/
+#articlelist input { width:24px;}
+

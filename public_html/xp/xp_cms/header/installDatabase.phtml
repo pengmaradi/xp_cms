@@ -1,0 +1,146 @@
+<?php
+
+/**
+ * class for installation
+ *
+ */
+class installDatabase
+{
+
+    /**
+     * @var string
+     */
+    private static $host;
+
+    /**
+     * @var string
+     */
+    private static $user;
+
+    /**
+     * @var string
+     */
+    private static $password;
+
+    /**
+     * @var string
+     */
+    private static $sqlfile = 'xp_cms.sql';
+
+    /**
+     * @var string
+     */
+    private static $dbname;
+
+    /**
+     *
+     * @param string $host
+     * @param string $user
+     * @param string $password
+     * @return void Description
+     */
+    public static function createTables($host, $user, $password, $dbname = 'xp_cms')
+    {
+        self::$host = $host;
+        self::$user = $user;
+        self::$password = $password;
+        self::$dbname = $dbname;
+        if (self::createDatabase(self::$host, self::$user, self::$password))
+        {
+            $conn = mysqli_connect(self::$host, self::$user, self::$password, self::$dbname);
+            // get sql file
+            $get_sql_data = file_get_contents(XPCMS_PAGE_PATH . 'header/' . self::$sqlfile, dirname(__FILE__));
+            $explode = explode(";", $get_sql_data);
+            $cnt = count($explode);
+
+            for ($i = 0; $i < $cnt; $i++)
+            {
+                $sql = $explode[$i];
+                @mysqli_query($conn, $sql);
+            }
+            mysqli_close($conn);
+            return TRUE;
+        } else
+        {
+            return FALSE;
+        }
+    }
+
+    /**
+     *
+     * @param string $host
+     * @param string $user
+     * @param string $password
+     * @return boolean
+     */
+    private function createDatabase($host, $user, $password)
+    {
+        $con = mysqli_connect($host, $user, $password);
+        if (mysqli_connect_errno())
+        {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            // go to install
+            exit();
+        }
+		
+//CREATE DATABASE `abc` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+        $sql = 'CREATE DATABASE IF NOT EXISTS ' . self::$dbname . ' CHARACTER SET utf8 COLLATE utf8_general_ci;';
+        if (!mysqli_query($con, $sql))
+        {
+            return FALSE;
+        } else
+        {
+            mysqli_close($con);
+            return TRUE;
+        }
+    }
+
+    /**
+     *
+     * @param string $host
+     * @param string $user
+     * @param string $password
+     * @param string $dbname
+     * @param array $arr
+     * @return void
+     */
+    public static function insertAdmin($host, $user, $password, $dbname, array $arr)
+    {
+//        $conn = mysqli_connect($host, $user, $password,$dbname);
+//        $sql = 'INSERT INTO be_users
+//           (`uid`, `username`, `password`, `tstamp`, `admin`, `starttime`, `endtime`, `language`, `deleted`, `lastlogin`, `usergroup`, `realname`, `email`, `login_ip`)
+//           VALUES (NULL, ' . $arr['admin'] . ', MD5(' . $arr['pass'] . '), UNIX_TIMESTAMP(), 1, "", "", "", 0, "", "", ' . $arr['realname'] . ', ' . $arr['email'] . ',"");
+//        ';
+//        mysqli_query($conn, $sql);
+//        mysqli_close($conn);
+
+        $a = new mysqli($host, $user, $password, $dbname);
+        $a->set_charset('utf-8');        // i, s, s, i, s, i, i, s, i, i ,s, s, s, s
+        $sql = "insert into be_users values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $a->prepare($sql) or die($stmt->error);
+
+        $uid = NULL;
+        $username = $arr['admin'];
+        $password = md5($arr['pass']);
+        $tstamp = time();
+        $admin = 1;
+        $starttime = 0;
+        $endtime = 0;
+        $language = '';
+        $deleted = 0;
+        $lastlogin = time();
+        $usergroup = '';
+        $realname = $arr['realname'];
+        $email = $arr['email'];
+        $login_ip = '';
+        $stmt->bind_param(
+                        "issisiisiissss", $uid, $username, $password, $tstamp, $admin, $starttime, $endtime, $language, $deleted, $lastlogin, $usergroup, $realname, $email, $login_ip
+                ) or die($stmt->error);
+        $ck = $stmt->execute();
+        if (!$ck)
+            die($stmt->error);
+
+        $a->close();
+    }
+
+}

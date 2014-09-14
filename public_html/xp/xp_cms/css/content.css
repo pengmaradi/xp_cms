@@ -1,0 +1,358 @@
+/*
+
+XP_CMS
+
+*/
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.error {
+    color: #FE57A1;
+    margin-left: 20px;
+    padding: 5px;
+}
+.clear {clear: both;}
+.formlist {clear:both; margin-bottom: 10px;}
+label {width: 150px; float: left;}
+input {width: 400px;}
+input[type='checkbox'] {width: 15px;}
+input[type='submit'] {width: 100px;}
+#loginform input {
+    width: 180px;
+}
+.color input {width: 100px;}
+input.highlight {
+    border: 1px solid red;
+}
+.loginform {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    margin-top: -100px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding:10px;
+}
+.cke_editable {
+    font-size: 13px;
+    line-height: 10px !important;
+}
+.cke_editable p {
+    margin: 0 !important;
+}
+/* create page */
+.pageTree {
+    width: 260px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    float: left;
+}
+.tree .list {
+    cursor: default;
+    background: #ECECEC;
+    padding: 5px 10px;
+    color: #0086C5;
+    font-family: Arial;
+    font-size: 18px;
+    /*border-bottom: 1px solid #fff;*/
+}
+ul.tree li li {border-bottom: 1px solid #fff;}
+.ckeditorform {
+    clear: both;
+}
+#makePageTree,
+#makePageType,
+.uploadFile,
+.makeTree {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;   
+}
+.box
+ {
+    background: #fff !important;
+    position: absolute !important;
+    top: 14% !important;
+    left: 20% !important;
+    padding: 30px !important;
+    width: 600px !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.9);
+    border: 1px solid #ccc;
+    z-index: 999;
+}
+.deco {
+    background: #ccc;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    z-index: 1;
+}
+.makepage {
+    clear: both;
+}
+.create {
+    cursor: pointer;
+}
+
+.closeit,
+#newcloseit,
+#closeit {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border-right: 5px solid #FFFFFF;
+    border-top: 5px solid #FFFFFF;
+    color: #000000;
+    cursor: pointer;
+    padding: 7px 8px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.delete {
+    background: #5CA4FF;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 2px;
+    padding: 3px 5px;
+}
+
+.hightlight {
+    border: 1px solid #FF0000;
+}
+#pagetype {width: 172px;}
+.addChildMenu {
+    background: gold;
+    padding: 0px 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.createtitle {
+    width: 80%;
+}
+.createNewPage {   
+    cursor: pointer;    
+    width: 25px;
+    height: 30px;
+    text-indent: -9999px;
+    margin-bottom: 10px;
+    background: url(../images/page_create_save.png) no-repeat 0 0;
+}
+.submit_save,
+#savecontent,
+#createType,
+#savenewpage {
+    background: url("../images/page_create_save.png") no-repeat scroll -90px 0 transparent;
+    border: medium none;
+    height: 30px;
+    position: absolute;
+    right: 35px;
+    text-indent: -9999px;
+    top: 6px;
+    width: 30px !important;
+}
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; }
+.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+
+/**
+* absolute position 
+*/
+.contentEditor {
+    background: #FFFFFF;
+    left: 50%;
+    padding: 20px;
+    position: absolute;
+    top: 100px;
+    width: 900px;
+    margin-left: -450px;
+    z-index: 999;        
+}
+.backDeco {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: .5;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    /* IE 5-7 */
+    filter: alpha(opacity=50);
+    height: 100%;
+    width: 100%;
+    z-index: 888;
+}
+
+/**
+* IMAGE UPLOAD
+*
+*/
+#gallery, .upload, .documents {
+    border: 1px solid #ccc; margin: 10px auto; padding: 10px; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+#blank_gallery {
+    font-family: Arial; font-size: 18px; font-weight: bold;
+    text-align: center;
+}
+#gallery .thumb {
+    float: left; 
+    margin: 10px;
+}
+
+.thumb.document {
+    width: 400px;
+    margin: 10px;
+}
+
+.smallimg:hover {
+    opacity: 1;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+.smallimg {
+    border: 1px solid gold; border-radius: 10px; opacity: 0.7; padding: 10px;
+}
+#gallery {
+    overflow: hidden;  clear: both;
+}
+/*
+#gallery:after {
+    content: "."; visibility: hidden; display: block; clear: both; height: 0; font-size: 0;
+}
+*/
+.prev, .next{
+    position: absolute;
+    z-index: 444;
+    background: wheat;
+    top: 50%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.9);
+    padding: 5px;
+    cursor: pointer;
+}
+.prev {left: 0;}
+.next {right: 0; }
+.files .show {
+    position:absolute; top: 0; left: 0; display: none;
+    height: 100%; width: 100%; text-align: center; 
+}
+.files .deco {
+    height: 100%; width: 100%; background: #000; opacity: 0.4; position: absolute; top: 0;
+}
+.my_slider {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -350px;
+    margin-top: -300px;
+    z-index: 333;
+}
+.my_slider .newimg {
+    background: #FFFFFF;
+    border: 1px solid gold;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/**
+ * CONFUGURATION
+ *
+ */
+.configuration {}
+.tabs {}
+.tab {
+    display: none; 
+    position: absolute; 
+    top: 104px; 
+    left: 0;
+    border-top: 1px solid paleturquoise; 
+    width: 100%; 
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+.tabs h3 {
+    float: left;
+    background: url(../images/header_hg.png) repeat-x top left;
+    padding: 2px 5px; 
+    cursor: pointer; 
+    color: #139ff7;
+    margin-right: 5px; 
+    border: 1px solid #eee; 
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+}
+.tabs h3:hover, .tabs h3.act {background: #fff; color: #000;}
+.tab_inner {
+    padding: 10px;
+}
+.upload_files,
+.prview_files {
+    float: left;
+}
+
+/**
+ * PAGES
+ *
+ */
+.pages {}
+.fe_pages {
+    float: left; width: 300px;
+}
+.fe_content {
+    float: left;
+    min-width: 1000px;
+}
+iframe {
+    border: none;
+    width: 100%;
+    min-height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/**
+ * USER ADMIN
+ *
+ */
+.realname {
+    cursor: pointer;
+    width: 520px;
+    margin: 10px 0;
+}
+.list_form {
+    padding: 10px;
+    border: 1px solid paleturquoise; 
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+/**
+* reset_home
+*/
+.reset_home {
+    float: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    margin-left: 20px;
+}

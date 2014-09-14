@@ -1,0 +1,29 @@
+/* 
+    Document   : xpcms
+    Created on : 01.07.2013, 21:11:28
+    Author     : xiaoling peng
+    Description: css for xpcms backend
+        Purpose of the stylesheet follows.
+        @package ./public_html/xp/xpcms/css/xpcms.css
+*/
+header {}
+#maincontent {}
+#mainleft{
+    width: 150px;
+    float: left;
+    min-height: 900px;
+}
+#mainright{
+    float: left;
+    min-width: 1000px;
+}
+iframe{
+    border:none;
+    width:100%;
+    min-height: 900px;
+    overflow: hidden;
+}
+#mainav {}
+footer {
+    clear: both;
+}
