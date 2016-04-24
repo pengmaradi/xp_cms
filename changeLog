@@ -1,6 +1,6 @@
-2014.09.13
+2014.09.13 Xiaoling Peng <pengmaradi@gmail.com>
     * version 0.1.4
-    * fixed sql bug more than one Admn login has problem
+    * fixed sql bug more than one Admin login has problem
 system/cms/modules/xpcms/models/inhalt_model.php
 
 2013.09.08 Xiaoling Peng <pengmaradi@gmail.com>
